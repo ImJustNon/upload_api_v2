@@ -31,20 +31,22 @@ app.use(morgan("dev"));
 //     next(); 
 // });
 
-const getAllRouterFileName = fs.readdirSync(path.join(__dirname, "./routes"));
-const filteredRouterFileName = getAllRouterFileName.filter(fileName => fileName.endsWith(".js"));
-filteredRouterFileName.forEach(filteredFileName =>{
-    try {
-        // const router = require(path.join(__dirname, "./routes", filteredFileName));
-        const router = require(`./routes/${filteredFileName}`);
-        app.use(router);
-        console.log(`[Router] Loaded success : routes/${filteredFileName}`);
-    }
-    catch(e){
-        console.log(`[Router] Can not Load : routes/${filteredFileName} : `, e);
-    }
-});
+// const getAllRouterFileName = fs.readdirSync(path.join(__dirname, "./routes"));
+// const filteredRouterFileName = getAllRouterFileName.filter(fileName => fileName.endsWith(".js"));
+// filteredRouterFileName.forEach(filteredFileName =>{
+//     try {
+//         // const router = require(path.join(__dirname, "./routes", filteredFileName));
+//         const router = require(`./routes/${filteredFileName}`);
+//         app.use(router);
+//         console.log(`[Router] Loaded success : routes/${filteredFileName}`);
+//     }
+//     catch(e){
+//         console.log(`[Router] Can not Load : routes/${filteredFileName} : `, e);
+//     }
+// });
 
+const router = require(path.join(__dirname, "./routes", "docs.js"));
+app.use(router);
 
 function startServer(){
     app.listen(config.port, () =>{
