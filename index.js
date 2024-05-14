@@ -45,8 +45,6 @@ filteredRouterFileName.forEach(filteredFileName =>{
     }
 });
 
-// const router = require("./routes/docs.js");
-// app.use(router);
 
 function startServer(){
     app.listen(config.port, () =>{

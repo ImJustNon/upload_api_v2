@@ -27,11 +27,11 @@
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
+    "build": "prisma generate",
+    "postinstall": "prisma generate",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:deploy": "npx prisma migrate deploy",
-    "prisma:studio": "npx prisma studio",
-    "build": "prisma generate",
-    "postinstall": "prisma generate"
+    "prisma:studio": "npx prisma studio" 
   },
   "devDependencies": {}
 }
