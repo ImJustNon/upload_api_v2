@@ -45,7 +45,7 @@ app.use(morgan("dev"));
 //     }
 // });
 
-const router = require(path.join(__dirname, "./routes", "docs.js"));
+const router = require("./routes/docs.js");
 app.use(router);
 
 function startServer(){
