@@ -28,7 +28,7 @@
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
     "prisma:migrate": "npx prisma migrate dev",
-    "prisma:deploy": "npx prisma migrate deploy"
+    "prisma:deploy": "npx prisma migrate deploy",
     "prisma:studio": "npx prisma studio"
   },
   "devDependencies": {}
