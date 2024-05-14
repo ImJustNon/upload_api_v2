@@ -87,7 +87,7 @@ router.post("/api/v1/upload", upload.single("file"), async(req, res) =>{
             });
             console.log("[Upload] ", {
                 id: randomFileId,
-                url: `http://127.0.0.1:8686/api/v1/call/${randomFileId}`,
+                url: `${config.base_url}/api/v1/call/${randomFileId}`,
                 content_type: fileContentType,
                 create_at: data.create_at,
             });
@@ -97,7 +97,7 @@ router.post("/api/v1/upload", upload.single("file"), async(req, res) =>{
                 error: null,
                 data: {
                     id: randomFileId,
-                    url: `http://127.0.0.1:8686/api/v1/call/${randomFileId}`,
+                    url: `${config.base_url}/api/v1/call/${randomFileId}`,
                     content_type: fileContentType,
                     author_id: checkToken.id,
                     create_at: data.create_at,
