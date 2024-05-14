@@ -22,14 +22,14 @@ app.use(cors());
 app.use(expressJson);
 app.use(urlEncoded);
 app.use(morgan("dev"));
-app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Headers', '*');
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-    next(); 
-});
+// app.use((req,res,next)=>{
+//     res.setHeader('Access-Control-Allow-Headers', '*');
+//     res.setHeader('Access-Control-Allow-Origin','*');
+//     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+//     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+//     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+//     next(); 
+// });
 
 const getAllRouterFileName = fs.readdirSync(path.join(__dirname, "./routes"));
 const filteredRouterFileName = getAllRouterFileName.filter(fileName => fileName.endsWith(".js"));
