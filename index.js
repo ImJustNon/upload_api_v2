@@ -30,6 +30,9 @@ app.use(morgan("dev"));
 //     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
 //     next(); 
 // });
+app.get("/hello", (req, res) =>{
+    return res.send("Hello, Word!");
+});
 
 const getAllRouterFileName = fs.readdirSync(path.join(__dirname, "./routes"));
 const filteredRouterFileName = getAllRouterFileName.filter(fileName => fileName.endsWith(".js"));
