@@ -9,6 +9,9 @@ router.get("/", async(req, res) =>{
         message: "Server Alive",
         error: null,
         data: {
+            create_author: {
+                target: "GET /api/v1/author/create?name=[name]",
+            },
             create_token: {
                 target: "GET /api/v1/author/token/create?t=[token]",
             },
