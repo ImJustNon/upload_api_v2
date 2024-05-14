@@ -30,9 +30,6 @@ app.use(morgan("dev"));
 //     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
 //     next(); 
 // });
-app.get("/hello", (req, res) =>{
-    return res.send("Hello, Word!");
-});
 
 const getAllRouterFileName = fs.readdirSync(path.join(__dirname, "./routes"));
 const filteredRouterFileName = getAllRouterFileName.filter(fileName => fileName.endsWith(".js"));
@@ -40,7 +37,7 @@ filteredRouterFileName.forEach(filteredFileName =>{
     try {
         // const router = require(path.join(__dirname, "./routes", filteredFileName));
         const router = require(`./routes/${filteredFileName}`)
-        app.use(router);
+        app.use("/", router);
         console.log(`[Router] Loaded success : routes/${filteredFileName}`);
     }
     catch(e){
