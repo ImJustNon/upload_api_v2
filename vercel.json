@@ -1,14 +1,19 @@
 {
+    "version": 2,
     "builds": [
-        {
-            "src": "index.js",
-            "use": "@vercel/node"
+        { 
+            "src": "package.json", 
+            "use": "@vercel/node" 
         }
     ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "index.js"
+    "routes": [],
+    "env": {
+        "NODE_ENV": "production"
+    },
+    "build": {
+        "scripts": {
+            "build": "npm run start"
         }
-    ]
+    }
 }
+  
