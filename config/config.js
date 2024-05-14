@@ -1,0 +1,11 @@
+require("dotenv").config();
+
+module.exports = {
+    port: process.env.PORT,
+    jwt: {
+        secret: process.env.JWT_SECRET,
+    },
+    discord: {
+        webhook_url: process.env.DISCORD_WEBHOOK_URL,
+    }
+}
