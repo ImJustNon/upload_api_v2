@@ -36,8 +36,8 @@ const filteredRouterFileName = getAllRouterFileName.filter(fileName => fileName.
 filteredRouterFileName.forEach(filteredFileName =>{
     try {
         // const router = require(path.join(__dirname, "./routes", filteredFileName));
-        const router = require(`./routes/${filteredFileName}`)
-        app.use("/", router);
+        const router = require(`./routes/${filteredFileName}`);
+        app.use(router);
         console.log(`[Router] Loaded success : routes/${filteredFileName}`);
     }
     catch(e){
