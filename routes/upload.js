@@ -13,7 +13,10 @@ const prisma = new PrismaClient();
 
 const storage = multer.memoryStorage();
 const upload = multer({ 
-    storage: storage 
+    storage: storage,
+    limits: {
+        fileSize: 50000000, // 50mb
+    }
 });
 
 
